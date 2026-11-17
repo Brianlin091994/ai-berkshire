@@ -481,7 +481,7 @@ B级瓶颈（有压力）：
 
 1. **报告位置**：
    - 完整扫描：`reports/bottleneck-map/{趋势名}-bottleneck-{YYYYMMDD}.md`
-   - 每日扫描：`reports/bottleneck-map/daily/{YYYY-MM-DD}-{am/pm}.md`
+   - 每小时扫描：`reports/bottleneck-map/{YYYY-MM-DD}/`，按“报告输出规则”命名（如 `09-00-FORM-IBDN.md`、`14-00-信号扫描.md`）
    - 瓶颈总地图：`reports/bottleneck-map/master-map.md`
    - 观察名单：`reports/bottleneck-map/watchlist.md`
 2. **语言**：中文
