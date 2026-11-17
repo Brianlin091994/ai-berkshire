@@ -69,7 +69,7 @@ reports/
 
 | Skill | 文件命名格式 | 示例 |
 |------|---------|------|
-| /investment-team | `{公司名}/` 目录内含4个视角+最终报告 | `reports/拼多多/最终报告.md` |
+| /investment-team | `{公司名}投资研究报告_{YYYYMMDD}.md`（一份综合报告，4 个视角不单独存文件） | `reports/拼多多/拼多多投资研究报告_20260704.md` |
 | /investment-research | `{公司名}-research-{YYYYMMDD}.md` | `reports/腾讯/腾讯-research-20260408.md` |
 | /investment-checklist | `{公司名}-checklist-{YYYYMMDD}.md` | `reports/腾讯/腾讯-checklist-20260408.md` |
 | /industry-research | `{行业名}-industry-{YYYYMMDD}.md`（根目录） | `reports/核电-industry-20260409.md` |
@@ -80,18 +80,13 @@ reports/
 | /thesis-tracker | `{公司名}-thesis.md`（长期维护） | `reports/腾讯/腾讯-thesis.md` |
 | /portfolio-review | `portfolio-latest.md`（根目录，持续更新） | `reports/portfolio-latest.md` |
 | /management-deep-dive | `{公司名}-management-{YYYYMMDD}.md` | `reports/腾讯/腾讯-management-20260409.md` |
+| /income-investment | `{公司名}-income-investment-{YYYYMMDD}.md` | `reports/Verizon/Verizon-income-investment-20261117.md` |
+| /news-pulse | `{公司名}-news-{YYYYMMDD}.md` | `reports/腾讯/腾讯-news-20260409.md` |
+| /deep-company-series | `{公司名}/《看懂{公司名}》/` 目录，每篇一个文件 | `reports/腾讯/《看懂腾讯》/` |
+| /wechat-article | 按主题放公司目录、`AI产业研究/` 或根目录（见 skill） | `reports/腾讯/腾讯-公众号-20260409.md` |
+| /bottleneck-hunter | `bottleneck-map/` 目录（文件规则见 skill） | `reports/bottleneck-map/master-map.md` |
 
-## /investment-team 文件结构
-
-```
-reports/{公司名}/
-├── README.md                         — 研究框架概览+核心结论
-├── 01-商业模式分析-段永平视角.md
-├── 02-财务估值分析-巴菲特视角.md
-├── 03-行业竞争分析-芒格视角.md
-├── 04-风险管理层评估-李录视角.md
-└── 最终报告.md                       — Team Lead 综合报告
-```
+`/dyp-ask`、`/era-alpha`、`/quality-screen`、`/thesis-drift` 不写报告文件，结果在对话中输出。
 
 ## 投研分析核心原则（最高优先级）
 
