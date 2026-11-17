@@ -136,12 +136,24 @@ reports/
 ## 常用命令
 
 ```bash
-# 推送报告到GitHub（在仓库根目录执行；顺序不能换：索引只收录已 git add 的报告）
+# 推送报告到GitHub（在仓库根目录执行；顺序不能换：先拉取再生成索引，否则远程的新报告会让索引产物冲突；索引只收录已 git add 的报告）
+git pull --rebase origin main
 git add -- reports/本次研究目录/
 python3 tools/reports_index.py
 git add -- README.md reports/README.md reports/index.json
 git commit -m "添加xxx报告"
+git push origin main
+```
+
+```bash
+# push 被拒（拉取后远程又有新提交）时重新拉取
 git pull --rebase origin main
+# 只有三份索引产物冲突时，不手工合并：取远程一侧后重新生成（其他文件冲突时先停下处理）
+git checkout --ours -- README.md reports/README.md reports/index.json   # rebase 中 --ours 是远程一侧
+python3 tools/reports_index.py
+git add -- README.md reports/README.md reports/index.json
+GIT_EDITOR=true git rebase --continue   # 不打开编辑器，沿用原提交说明
+python3 tools/reports_index.py --check
 git push origin main
 ```
 
