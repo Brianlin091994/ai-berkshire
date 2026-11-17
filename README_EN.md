@@ -319,6 +319,8 @@ The repository maintains three entry points: `skills/*.md` are the Claude Code c
 
 ### 3. Use
 
+Start `claude` or `codex` from the repository root (`cd ai-berkshire`) before using the skills. The skills call `tools/` and save to `reports/` with relative paths, and the shared rules in `AGENTS.md` load automatically only inside the repository; run from another directory, they break.
+
 Invoke directly in Claude Code:
 
 ```bash

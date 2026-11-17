@@ -346,6 +346,8 @@ REM 可选：安装 Codex slash prompts
 
 ### 3. 使用
 
+在仓库根目录（`cd ai-berkshire`）启动 `claude` 或 `codex` 后再使用 skill。skill 用相对路径调用 `tools/`、把报告存到 `reports/`，共享规范 `AGENTS.md` 也只在仓库内自动加载；在其他目录运行会失效。
+
 在 Claude Code 中直接调用：
 
 ```bash

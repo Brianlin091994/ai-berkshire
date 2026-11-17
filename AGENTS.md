@@ -38,8 +38,8 @@ assets/          — 图片等静态资源
   `python3 scripts/sync-codex-prompts.py`
 - 不要手动编辑生成的 `codex-skills/*/SKILL.md`，除非同时更新 `skills/` 中对应的源文件。
 - 对 `codex-skills/` 下 Codex 专属的手写包，保持其明确标注为 Codex 专属；除非有意让 Claude Code 也采用该工作流，否则不要创建同名的 `skills/*.md` 文件。
-- 工具路径保持与文档约定的克隆路径兼容：
-  `~/ai-berkshire/tools/...`
+- skill 只在仓库根目录运行，工具用相对路径调用：
+  `python3 tools/...`
 - 共享规范只写在 `AGENTS.md`；`CLAUDE.md` 只做 `@AGENTS.md` 导入，不在其中新增规则。
 
 ## 报告目录结构
@@ -126,7 +126,6 @@ reports/
 
 ## GitHub 操作
 
-- 本地克隆路径：`~/ai-berkshire/`
 - 远程仓库：`https://github.com/xbtlin/ai-berkshire.git`
 - 推送前先 `git pull --rebase origin main`（远程经常有新提交）
 - commit message 用中文，描述清楚改了什么
@@ -135,8 +134,7 @@ reports/
 ## 常用命令
 
 ```bash
-# 推送报告到GitHub（顺序不能换：索引只收录已 git add 的报告）
-cd ~/ai-berkshire
+# 推送报告到GitHub（在仓库根目录执行；顺序不能换：索引只收录已 git add 的报告）
 git add -- reports/本次研究目录/
 python3 tools/reports_index.py
 git add -- README.md reports/README.md reports/index.json

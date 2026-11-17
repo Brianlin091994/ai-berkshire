@@ -319,6 +319,8 @@ REM オプション：Codexスラッシュプロンプトをインストール
 
 ### 3. 使い方
 
+Skillを使う前に、リポジトリのルート（`cd ai-berkshire`）で `claude` または `codex` を起動してください。Skillは相対パスで `tools/` を呼び出し、`reports/` に保存します。共有ルール `AGENTS.md` もリポジトリ内でのみ自動で読み込まれるため、他のディレクトリで実行すると動作しません。
+
 Claude Codeで直接呼び出す：
 
 ```bash
