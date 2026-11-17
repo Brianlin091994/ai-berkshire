@@ -140,17 +140,18 @@ reports/{公司名}/
 ## 常用命令
 
 ```bash
-# 推送报告到GitHub
+# 推送报告到GitHub（顺序不能换：索引只收录已 git add 的报告）
 cd ~/ai-berkshire
-python3 tools/reports_index.py          # 先刷新研究索引（必做）
-git add reports/xxx.md reports/README.md reports/index.json README.md
+git add -- reports/本次研究目录/
+python3 tools/reports_index.py
+git add -- README.md reports/README.md reports/index.json
 git commit -m "添加xxx报告"
 git pull --rebase origin main
 git push origin main
 ```
 
 ```bash
-# 只检查索引是否过期，不写盘（CI 也跑这条）
+# 提交前在本地检查索引是否过期，不写盘
 python3 tools/reports_index.py --check
 ```
 
@@ -163,7 +164,8 @@ python3 tools/reports_index.py --check
   `python3 tools/financial_rigor.py ...`
 - 台股数据用 tools/twstock_data.py（FinMind）获取，并按 skills/financial-data.md 台股章节交叉验证
 - 报告写完后主动询问是否推送到GitHub
-- **推送前必须跑 `python3 tools/reports_index.py` 刷新索引**，否则 CI 的索引校验会失败
+- **推送前必须先 `git add` 报告、再跑 `python3 tools/reports_index.py` 刷新索引**，否则新报告不会进入索引；
+  提交前在本地运行 `python3 tools/reports_index.py --check` 确认索引未过期
 - 新报告文件名带 `-YYYYMMDD` 后缀、正文首行写 `# 标题`，索引即可自动识别；
   需要覆盖时在文件头加 YAML front-matter（`title` / `date` / `type`），
   规范见 `reports/_index/README.md`

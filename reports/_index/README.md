@@ -23,7 +23,7 @@ git add -- reports/本次研究目录/
 python3 tools/reports_index.py
 git add -- README.md reports/README.md reports/index.json
 
-# 提交前/CI 检查：只检查是否过期，不写盘
+# 提交前在本地检查：只检查是否过期，不写盘
 python3 tools/reports_index.py --check
 ```
 
