@@ -175,7 +175,7 @@
 grep -r "<本机用户名>\|/Users/\|<个人身份信息>" reports/ | head
 ```
 
-确认无误后才 `git pull --rebase && git commit && git push`。
+确认无误后，按 `AGENTS.md`「常用命令」的推送步骤推送；`git add` 的目录是本系列文件夹（`reports/{公司名}/《看懂{公司名}》/`，或带日期后缀的新文件夹）。
 
 ---
 
